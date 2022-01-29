@@ -13,41 +13,41 @@ import { Fragment } from 'react';
 const MainNavigation: NextComponentType = () => {
   return (
     <Fragment>
-      <nav className={classes.bottom__nav}>
+      <nav className={classes.ly_footer_nav}>
         <Link href="/market">
-          <a className={classes.bottom__nav__icon}>
+          <a className={classes.ly_footer_nav_menu}>
             <FontAwesomeIcon
               icon={faChartLine}
-              className={classes.nav_icon}
+              className={classes.ly_footer_nav_icon}
             ></FontAwesomeIcon>
             <span>시장</span>
           </a>
         </Link>
         <Link href="/news">
-          <a className={classes.bottom__nav__icon}>
+          <a className={classes.ly_footer_nav_menu}>
             <FontAwesomeIcon
               icon={faNewspaper}
-              className={classes.nav_icon}
+              className={classes.ly_footer_nav_icon}
             ></FontAwesomeIcon>
             <span>뉴스</span>
           </a>
         </Link>
 
         <Link href="/favorite">
-          <a className={classes.bottom__nav__icon}>
+          <a className={classes.ly_footer_nav_menu}>
             <FontAwesomeIcon
               icon={faStar}
-              className={classes.nav_icon}
+              className={classes.ly_footer_nav_icon}
             ></FontAwesomeIcon>
             <span>관심목록</span>
           </a>
         </Link>
 
         <Link href="/more">
-          <a className={classes.bottom__nav__icon}>
+          <a className={classes.ly_footer_nav_menu}>
             <FontAwesomeIcon
               icon={faBars}
-              className={classes.nav_icon}
+              className={classes.ly_footer_nav_icon}
             ></FontAwesomeIcon>
             <span>더보기</span>
           </a>

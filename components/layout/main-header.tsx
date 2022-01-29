@@ -7,28 +7,28 @@ import classes from './main-header.module.scss';
 const MainHeader: NextComponentType = () => {
   return (
     <Fragment>
-      <div className={classes.top__header__container}>
-        <header className={classes.top__header}>
-          <h2 className={classes.top__header__category}>뉴스</h2>
+      <div className={classes.ly_header}>
+        <header className={classes.ly_header_inner}>
+          <h2 className={classes.ly_header_cat}>뉴스</h2>
           <FontAwesomeIcon
             icon={faSearch}
-            className={classes.top__header__icon}
+            className={classes.ly_header_icon}
           ></FontAwesomeIcon>
         </header>
-        <nav className={classes.news__category__navbar}>
-          <a href="#" className={classes.news__category__item}>
-            <span className="active">암호 화폐</span>
+        <nav className={classes.ly_header_nav}>
+          <a href="#" className={classes.ly_header_nav_cat}>
+            <span className={classes.active}>암호 화폐</span>
           </a>
-          <a href="#" className={classes.news__category__item}>
+          <a href="#" className={classes.ly_header_nav_cat}>
             <span>상품</span>
           </a>
-          <a href="#" className={classes.news__category__item}>
+          <a href="#" className={classes.ly_header_nav_cat}>
             <span>주식시장</span>
           </a>
-          <a href="#" className={classes.news__category__item}>
+          <a href="#" className={classes.ly_header_nav_cat}>
             <span>경제지표</span>
           </a>
-          <a href="#" className={classes.news__category__item}>
+          <a href="#" className={classes.ly_header_nav_cat}>
             <span>경제뉴스</span>
           </a>
         </nav>

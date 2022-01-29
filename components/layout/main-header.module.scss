@@ -1,4 +1,4 @@
-.top__header__container {
+.ly_header {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   z-index: 100;
 }
 
-.top__header {
+.ly_header_inner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,19 +16,19 @@
   height: 50px;
 }
 
-.top__header__category {
+.ly_header_category {
   font-size: 15px;
   font-weight: 600;
 }
 
-.top__header__icon {
+.ly_header_icon {
   position: fixed;
   right: 35px;
   font-size: 20px;
   cursor: pointer;
 }
 
-.news__category__navbar {
+.ly_header_nav {
   display: flex;
   background: #fff;
   justify-content: space-around;
@@ -39,12 +39,12 @@
   margin-bottom: 5px;
 }
 
-.news__category__item {
+.ly_header_nav_cat {
   text-decoration: none;
   color: #adb5bd;
   font-size: 12px;
 }
 
-.news__category > .active {
+.ly_header_nav_cat > .active {
   color: black;
 }
