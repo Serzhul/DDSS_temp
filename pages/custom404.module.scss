@@ -1,4 +1,4 @@
-.page__container {
+.bl_errPg {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,12 +16,12 @@
   }
 }
 
-.page__header {
-  font-size: 100px;
+.bl_errPg_header {
+  font-size: 50px;
   margin-bottom: 30px;
 }
 
-.page__error__message {
+.el_errPg_msg {
   margin-bottom: 30px;
   padding: 10px;
 
