@@ -1,17 +1,16 @@
-import type { AppProps } from 'next/app';
+import { useState, useEffect } from 'react';
 import Router from 'next/router';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import Layout from '../components/layout/layout';
-import '../styles/globals.scss';
-import { useState, useEffect, Fragment } from 'react';
-import Spinner from '../components/ui/spinner';
-import MoreHeader from '../components/layout/more-header';
-import MainNavigation from '../components/layout/main-navigation';
-import TickerHeader from '../components/layout/ticker-header';
-config.autoAddCss = false;
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { ThemeProvider } from 'next-themes';
 
-function MyApp({ Component, pageProps, ...appProps }: AppProps) {
+import 'styles/globals.scss';
+import 'styles/theme.scss';
+
+import Spinner from 'components/Spinner';
+import NavBar from 'components/NavBar';
+
+function MyApp({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   function routeChangeStart() {
@@ -31,35 +30,24 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
     routeChangeComplete();
   });
 
-  const getContent = () => {
-    if ([`/more`].includes(appProps.router.pathname))
-      return (
-        <Fragment>
-          {isLoading && <Spinner />}
-          <MoreHeader />
-          <Component {...pageProps} />
-          <MainNavigation />
-        </Fragment>
-      );
-
-    if ([`/chart`].includes(appProps.router.pathname))
-      return (
-        <Fragment>
-          {isLoading && <Spinner />}
-          <TickerHeader />
-          <Component {...pageProps} />
-          <MainNavigation />
-        </Fragment>
-      );
-
-    return (
-      <Layout>
-        {isLoading && <Spinner />}
-        <Component {...pageProps} />{' '}
-      </Layout>
-    );
-  };
-
-  return <Fragment>{getContent()}</Fragment>;
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </Head>
+      {isLoading && <Spinner />}
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+      <NavBar />
+    </>
+  );
 }
 export default MyApp;

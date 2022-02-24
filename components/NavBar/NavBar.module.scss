@@ -1,0 +1,43 @@
+.bl_tabNav {
+  background-color: currentColor;
+  font-size: 12px;
+  padding: 6px 0;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  &_inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > li {
+      width: 25%;
+    }
+  }
+
+  &_link {
+    display: inline-block;
+    width: 100%;
+    color: #777;
+    text-decoration: none;
+    transition: 0.25s;
+    text-align: center;
+
+    &:focus,
+    &:hover {
+      color: var(--theme-page-background);
+    }
+
+    &.is_active {
+      color: var(--theme-page-background);
+    }
+  }
+
+  &_icon {
+    width: 20px;
+    height: 20px;
+  }
+}

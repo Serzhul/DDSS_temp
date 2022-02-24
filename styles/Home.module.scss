@@ -2,27 +2,17 @@
 @import 'variables';
 @import 'fonts';
 
-.bottom__nav {
-  background: #f1f1f1;
-  position: fixed;
-  bottom: 0;
-  height: 65px;
-  width: 100%;
+.container {
+  height: 100vh;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  & .nav_icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 20px;
-  }
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
 }
 
-.bottom__nav__icon {
-  margin-top: 10px;
-  text-decoration: none;
-  color: #adb5bd;
-  font-size: 12px;
+.darkModeBtnWrapper {
+  width: 100%;
 }

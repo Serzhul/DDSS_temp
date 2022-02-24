@@ -1,0 +1,38 @@
+.ly_header {
+  border-bottom: 1px solid #ddd;
+
+  &_inner {
+    max-width: 1230px;
+    padding: 4px 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .bl_btnWrapper {
+      display: flex;
+      align-items: center;
+      text-align: right;
+    }
+  }
+}
+
+.bl_stockHeading {
+  &_ttl {
+    font-weight: bold;
+  }
+
+  &_standard {
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
+
+.ly_cont {
+  max-width: 1230px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// 다크모드 적용 아이콘
+.el_darkModeIcon {
+  color: var(--theme-btn-text) !important;
+}

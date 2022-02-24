@@ -1,27 +1,43 @@
-import type { NextPage } from 'next';
-import classes from './more.module.scss';
-import { Fragment } from 'react';
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useTheme } from 'next-themes';
+import Toggle from 'react-toggle';
 
-const MorePage: NextPage = () => {
+import styles from 'pages/more/more.module.scss';
+import 'react-toggle/style.css';
+
+export default function More() {
+  const [isMounted, setIsMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const switchTheme = () => {
+    if (isMounted) {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+    }
+  };
+
   return (
-    <Fragment>
-      <main className={classes.bl_moreMenu}>
-        <ul className={classes.bl_moreMenu_list}>
-          <li className={classes.bl_moreMenu_item}>
-            <button className={classes.el_btn_socialGoggle}>
-              Google 계정으로 로그인
-            </button>
-          </li>
-          <li className={classes.bl_moreMenu_item}>
-            <button className={classes.el_btn_menu}>Menu1</button>
-          </li>
-          <li className={classes.bl_moreMenu_item}>
-            <button className={classes.el_btn_menu}>Menu2</button>
-          </li>
-        </ul>
-      </main>
-    </Fragment>
-  );
-};
+    <div className={styles.ly_more}>
+      <Head>
+        <title>Dark mode with SCSS and Next.js</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-export default MorePage;
+      <h1>Dark mode with SCSS and Next- themes</h1>
+
+      <div className={styles.ly_more_darkModeBtnWrapper}>
+        <Toggle
+          className={styles.el_darkModeToggle}
+          checked={isMounted && theme === 'light'}
+          onChange={switchTheme}
+          icons={{ checked: '🌙', unchecked: '🔆' }}
+          aria-label="Dark mode"
+        />
+      </div>
+    </div>
+  );
+}
